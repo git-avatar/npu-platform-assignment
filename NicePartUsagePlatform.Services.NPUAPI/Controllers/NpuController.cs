@@ -16,7 +16,7 @@ namespace NicePartUsagePlatform.Services.NPUAPI.Controllers
         private IMapper _mapper;
 
         private BlobServiceClient _blobServiceClient;
-        private const string containerName = "pencik";
+        private string containerName = "pencik";
 
         public NpuController(AppDbContext db, IMapper mapper, BlobServiceClient blobServiceClient)
         {
@@ -48,16 +48,8 @@ namespace NicePartUsagePlatform.Services.NPUAPI.Controllers
         {
             try
             {
-                Npu obj = _db.Npus.FirstOrDefault(x => x.NpuId == id);
-                if(obj != null) 
-                {
-                    _response.Result = _mapper.Map<NpuListDto>(obj);
-                }
-                else
-                {
-                    _response.Message = "The NPU with the given ID cannot be found!";
-                }
-                
+                Npu obj = _db.Npus.First(x => x.NpuId == id);
+                _response.Result = _mapper.Map<NpuListDto>(obj);
             }
             catch (Exception ex)
             {
@@ -133,12 +125,10 @@ namespace NicePartUsagePlatform.Services.NPUAPI.Controllers
         {
             try
             {
-                Npu existingNpu = _db.Npus.FirstOrDefault(x => x.NpuId == id);
+                Npu existingNpu = _db.Npus.First(x => x.NpuId == id);
 
-                if (existingNpu != null) {
-                    existingNpu.Description = editNpuDto.Description;
-                    existingNpu.ElementName = editNpuDto.ElementName;
-                }
+                existingNpu.Description = editNpuDto.Description;
+                existingNpu.ElementName = editNpuDto.ElementName;
 
                 _db.SaveChanges();
 
@@ -158,7 +148,7 @@ namespace NicePartUsagePlatform.Services.NPUAPI.Controllers
         {
             try
             {
-                Npu obj = _db.Npus.FirstOrDefault(x => x.NpuId == id);
+                Npu obj = _db.Npus.First(x => x.NpuId == id);
 
                 BlobContainerClient blobContainerClient = _blobServiceClient.GetBlobContainerClient(containerName);
 

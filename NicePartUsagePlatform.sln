@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NicePartUsagePlatform.Auth"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NicePartUsagePlatform.Services.NPUAPI", "NicePartUsagePlatform.Services.NPUAPI\NicePartUsagePlatform.Services.NPUAPI.csproj", "{DC9D12EE-D02B-48C5-B094-AA747E9AA2E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NicePartUsagePlatform.Services.NPUAPI.Test", "NicePartUsagePlatform.Services.NPUAPI.Test\NicePartUsagePlatform.Services.NPUAPI.Test.csproj", "{76646E36-33A6-4659-A181-50FB059D0FFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{DC9D12EE-D02B-48C5-B094-AA747E9AA2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC9D12EE-D02B-48C5-B094-AA747E9AA2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC9D12EE-D02B-48C5-B094-AA747E9AA2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76646E36-33A6-4659-A181-50FB059D0FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76646E36-33A6-4659-A181-50FB059D0FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76646E36-33A6-4659-A181-50FB059D0FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76646E36-33A6-4659-A181-50FB059D0FFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{B2D1F210-18E5-4277-A59F-3786A250E840} = {EEC40AA5-3962-4476-8CAE-45D2808421BB}
 		{CBA74A08-B856-40D5-952F-7FEBCD3AF912} = {21F9F596-6A7C-4DD3-A649-542D4398360D}
 		{DC9D12EE-D02B-48C5-B094-AA747E9AA2E7} = {21F9F596-6A7C-4DD3-A649-542D4398360D}
+		{76646E36-33A6-4659-A181-50FB059D0FFF} = {21F9F596-6A7C-4DD3-A649-542D4398360D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93A60BF4-2739-4966-8786-9E1F046CA759}
