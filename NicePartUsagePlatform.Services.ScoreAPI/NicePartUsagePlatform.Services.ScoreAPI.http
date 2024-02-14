@@ -1,6 +1,0 @@
-# @NicePartUsagePlatform.Services.ScoreAPI_HostAddress = http://localhost:5145
-
-# GET {{NicePartUsagePlatform.Services.ScoreAPI_HostAddress}}/weatherforecast/
-# Accept: application/json
-
-# ###
