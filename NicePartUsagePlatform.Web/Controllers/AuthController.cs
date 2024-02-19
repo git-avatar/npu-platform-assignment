@@ -40,11 +40,13 @@ namespace NicePartUsagePlatform.Web.Controllers
 
                 await SignInUser(loginResponseDto);
                 _tokenProvider.SetToken(loginResponseDto.Token);
+                TempData["success"] = "Successful login";
                 return RedirectToAction("Index", "Home");
             }
             else
             {
                 ModelState.AddModelError("CustomError", response.Message);
+                TempData["error"] = "Cannot login";
                 return View(obj);
             }
         }
@@ -77,14 +79,12 @@ namespace NicePartUsagePlatform.Web.Controllers
                 assingRole = await _authService.AssignRoleAsync(obj);
                 if (assingRole != null && assingRole.IsSuccess)
                 {
-                    //
-                    TempData["success"] = "Registration Successful";
+                    TempData["success"] = "Successful registration";
                     return RedirectToAction(nameof(Login));
                 }
             }
             else
             { 
-                //
                 TempData["error"] = result.Message;
             }
 
