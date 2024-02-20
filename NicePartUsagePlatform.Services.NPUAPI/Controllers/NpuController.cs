@@ -98,9 +98,12 @@ namespace NicePartUsagePlatform.Services.NPUAPI.Controllers
 
                 var blobUrl = blobClient.Uri.AbsoluteUri;
 
+                var filter = new ProfanityFilter.ProfanityFilter();
+                var filteredDescription = filter.CensorString(model.Description);
+
                 Npu obj = new Npu()
                 {
-                    Description = model.Description,
+                    Description = filteredDescription,
                     UserId = new Guid("0af5586a-476d-479e-8aa5-3e6648357057"),
                     ElementName = model.ElementName,
                     ImageUrl = blobUrl,
